@@ -5,6 +5,23 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.2.0]
+
+### Changed
+
+* After a homing action, valve will move back to the previous position
+* Minor mistake in naming of sensors "a space" was missing
+* Moved old config in OLD YAML folder
+
+### Added
+
+* Added maintenance homing option. Valve will Re-home in a set interval go back to its previous position
+* Added maintenance homing time to HA. Can be set between 1h and 168h
+* Added Homing timeout, if homing takes longer than 15s Homing Failed will be set. Motor will be powered down.
+* Added option to disable the maintenance homing. Can be toggled from HA.
+* Added more diagnostics: "Last Maintenance Re-home" "Maintenance Status" "Maintenance Re-home Due In" "Maintenance Period Effective"
+
+
 ## [1.1.0]
 
 ### Changed
