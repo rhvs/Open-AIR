@@ -1,4 +1,4 @@
-![Open AIR Valve 3D Prints](https://github.com/Flamingo-tech/Open-AIR/blob/main/Open%20AIR%20Valve/Hardware/Open%20AIR%20Valve%203D%20prints/Open%20AIR%20Valve%20Complete%20Assembly_A.step.png "Open AIR Valve 3D Prints")
+![Open AIR Valve 3D Prints](https://flamingo-shop.nl/cdn/shop/files/1000117854.png?v=1771067302&width=1920) AIR Valve 3D Prints")
 
 # Open AIR Valve – 3D Printed Parts
 
