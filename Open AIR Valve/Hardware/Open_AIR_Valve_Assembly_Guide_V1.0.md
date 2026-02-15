@@ -24,8 +24,9 @@ The following components are included in the DIY valve package (available here: 
 Place all parts on your desk and verify that everything is present:
 
 **Fasteners**
-- 6 × M3×6 DIN912 bolts  
-- 2 × M2×6 bolts  
+- 10 × M3×6 DIN912 bolts  
+- 2 × M2×6 DIN912 bolts
+- 3 × M3×6 DIN912 bolts (for Sensor, if added to order)    
 
 **Mechanical components**
 - 1 × Motor  
@@ -35,7 +36,7 @@ Place all parts on your desk and verify that everything is present:
 **Electronics**
 - 1 × Main PCBA  
 - 1 × Hall sensor PCBA  
-- 1 × Optional sensor module (if included)
+- 1 × Optional sensor module (if added to order)
 
 ---
 
@@ -136,6 +137,8 @@ The assembled body should look like this:
 <p align="center">
 <img src="https://github.com/Flamingo-tech/Open-AIR/blob/main/Open%20AIR%20Valve/Hardware/Pictures/Assembly_Guide_Pictures/1000117887.png"/>
 </p>
+
+Secure the two halves with four M3x6 Bolts!
 
 ---
 
@@ -242,9 +245,8 @@ Slide the sensor underneath the retaining clips.
 
 ⚠️ Important:
 
-- Do NOT press on the SCD40 sensor  
-- Do NOT remove the white membrane  
-- The membrane is required for proper operation  
+- Do NOT press on the SCD40 sensor (Silver thing with white top)
+- Do NOT remove the white membrane, the membrane is required for proper operation! 
 
 Connect the sensor cable to the PCB.
 
