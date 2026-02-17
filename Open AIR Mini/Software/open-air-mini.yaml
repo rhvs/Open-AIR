@@ -1,9 +1,10 @@
 substitutions:
   devicename: open-air-mini
-  upper_devicename: Open AIR Mini
+  upper_devicename: ${friendly_name}
 
 esphome:
   name: ${devicename}
+  friendly_name: Ventilation
 
 esp32:
   board: esp32dev
