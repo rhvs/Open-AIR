@@ -117,13 +117,13 @@ logger:
 web_server:
   port: 80
 
-api:
-  encryption:
-    key: !secret api_encryption_key
+#api:
+#  encryption:
+#    key: !secret api_encryption_key
 
 ota:
   - platform: esphome
-    password: !secret ota_password
+    password: !secret ota_password_${devicename}
 
 wifi:
   ssid: !secret wifi_ssid
@@ -461,6 +461,41 @@ button:
 
 # ---------- SENSORS ----------
 sensor:
+  # CO2, VOC, NOx, Temperature, Humidity
+  - platform: scd4x
+    i2c_id: i2c_sensor_1
+    co2:
+      name: "CO2"
+      id: air_Co2
+      accuracy_decimals: 0
+    update_interval: 30s
+    measurement_mode: periodic
+
+  - platform: sgp4x
+    i2c_id: i2c_sensor_1
+    voc:
+      name: "VOC Index "
+      id: air_VOC
+    nox:
+      name: "NOx Index "
+      id: air_NOx
+    compensation:
+      temperature_source: air_temperature #Make sure to match these if you change ID's.
+      humidity_source: air_humidity       #Make sure to match these if you change ID's.
+    update_interval: 30s
+
+  - platform: sht4x
+    i2c_id: i2c_sensor_1
+    temperature:
+      name: "Temperature"
+      id: air_temperature
+      accuracy_decimals: 2
+    humidity:
+      name: "Humidity"
+      id: air_humidity
+      accuracy_decimals: 2
+    update_interval: 30s
+  
   # WiFi RSSI
   - platform: wifi_signal
     id: wifi_signal_db
