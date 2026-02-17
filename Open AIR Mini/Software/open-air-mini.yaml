@@ -1,6 +1,5 @@
 substitutions:
   devicename: open-air-mini
-  upper_devicename: ${friendly_name}
 
 esphome:
   name: ${devicename}
@@ -13,11 +12,11 @@ esp32:
 
 # Enable logging
 logger:
-  level: DEBUG
+  level: INFO
 
 # This is optional and can be commented out to disable the Web Server
-web_server:
-  port: 80
+#web_server:
+#  port: 80
 
 # Enable Home Assistant API
 api:
@@ -102,5 +101,3 @@ sensor:
       - lambda: return min(max(2 * (x + 100.0), 0.0), 100.0);
     unit_of_measurement: "Signal %"
     entity_category: "diagnostic"
-    device_class: ""
-
