@@ -128,6 +128,8 @@ ota:
 wifi:
   ssid: !secret wifi_ssid
   password: !secret wifi_password
+  use_address: 0.0.0.0
+  min_auth_mode: WPA2
   ap:
     ssid: "${upper_devicename} Config AP"
     password: !secret wifi_ap_password
@@ -264,7 +266,7 @@ valve:
           id(my_stepper).set_target(525);
           id(last_cmd_pos) = 1.0f;
           id(air_valve).position = 1.0f;
-          id(air_valve).current_operation = VALVE_OPERATION_OPEN;
+          id(air_valve).current_operation = VALVE_OPERATION_OPENING;
           id(air_valve).publish_state();
 
     close_action:
@@ -272,7 +274,7 @@ valve:
           id(my_stepper).set_target(0);
           id(last_cmd_pos) = 0.0f;
           id(air_valve).position = 0.0f;
-          id(air_valve).current_operation = VALVE_OPERATION_CLOSED;
+          id(air_valve).current_operation = VALVE_OPERATION_CLOSING;
           id(air_valve).publish_state();
 
     position_action:
@@ -367,6 +369,14 @@ binary_sensor:
       mode:
         input: true
       inverted: true
+
+  - platform: template
+    id: valve_is_closed
+    name: "${upper_devicename} Is Closed"
+    lambda: |-
+      return id(air_valve).position <= 0.01f;
+    entity_category: diagnostic
+    icon: "mdi:valve-closed"
 
   - platform: template
     id: homing_failed_sensor
